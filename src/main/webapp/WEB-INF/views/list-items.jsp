@@ -13,18 +13,20 @@
 </head>
 <body>
 <h1>List Items</h1>
-
+<button><a href="/item/new">Add new item!!!</a></button>
 <table border="1">
     <tr>
         <th>CODE</th>
         <th>NAME</th>
         <th>PRICE</th>
+        <th>NUMBER</th>
     </tr>
 <c:forEach var="item" items="${allitems}">
     <tr>
         <td>${item.codeItem}</td>
         <td>${item.nameItem}</td>
         <td>${item.priceItem}</td>
+        <td>${item.numberItem}</td>
     </tr>
 </c:forEach>
 </table>
