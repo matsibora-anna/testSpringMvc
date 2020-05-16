@@ -23,6 +23,17 @@ public class Item {
     @Column(name = "category")
     private String categoryItem;
 
+    @Column(name = "number")
+    private Integer numberItem;
+
+    public Integer getNumberItem() {
+        return numberItem;
+    }
+
+    public void setNumberItem(Integer numberItem) {
+        this.numberItem = numberItem;
+    }
+
     public Item() {
     }
 
