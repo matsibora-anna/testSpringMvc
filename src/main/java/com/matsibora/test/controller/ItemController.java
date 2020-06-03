@@ -6,12 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/item")
@@ -32,6 +31,14 @@ public class ItemController {
         Item item = new Item();
         theModel.addAttribute("item", item);
         return "form-add-items";
+    }
+
+    @GetMapping("/update")
+    public ModelAndView updateNewItem(@RequestParam("itemId") int itemId) {
+        ModelAndView theModel = new ModelAndView("form-add-items");
+        Optional<Item> item = itemService.findById(itemId);
+        theModel.addObject("item", item);
+        return theModel;
     }
 
     @PostMapping("/saveItem")

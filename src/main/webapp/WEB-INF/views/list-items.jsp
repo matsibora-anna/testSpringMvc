@@ -22,11 +22,15 @@
         <th>NUMBER</th>
     </tr>
 <c:forEach var="item" items="${allitems}">
+    <c:url var="updateLink" value="/item/update">
+        <c:param name="itemId" value="${item.idItem}"/>
+    </c:url>
     <tr>
         <td>${item.codeItem}</td>
         <td>${item.nameItem}</td>
         <td>${item.priceItem}</td>
         <td>${item.numberItem}</td>
+        <td><button><a href="${updateLink}">Update item!!!</a></button></td>
     </tr>
 </c:forEach>
 </table>
