@@ -1,11 +1,14 @@
 package com.matsibora.test.service;
 
 import com.matsibora.test.entity.Item;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
+import java.util.Optional;
 
 public interface ItemService {
 
-    public List<Item> getItems();
+    List<Item> getItems();
+    void addItem(Item item);
+    Item findById(Integer id);
+    boolean deleteById(Integer id);
+
 }

@@ -1,6 +1,6 @@
 package com.matsibora.test.service;
 
-import com.matsibora.test.entity.Item;
+import com.matsibora.test.entity.Customer;
 import com.matsibora.test.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerRepository customerRepository;
 
     @Override
-    public List<Item> getCustomers() {
+    public List<Customer> getCustomers() {
         return customerRepository.findAll();
     }
 }
