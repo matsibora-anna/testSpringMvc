@@ -16,7 +16,7 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<Item> getItems() {
-        return itemRepository.findAll();
+        return itemRepository.findAllByDisableItemFalse();
     }
 
     @Override
@@ -25,12 +25,19 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public void updateItem(Item item) {
-        itemRepository.save(item);
+    public Item findById(Integer id) {
+        return itemRepository.findById(id).get();
     }
 
     @Override
-    public Optional<Item> findById(Integer id) {
-        return itemRepository.findById(id);
+    public boolean deleteById(Integer id) {
+        Item item = itemRepository.findById(id).get();
+        if (item.getNumberItem() == 0) {
+            item.setDisableItem(true);
+            itemRepository.save(item);
+            return true;
+        } else {
+            return false;
+        }
     }
 }

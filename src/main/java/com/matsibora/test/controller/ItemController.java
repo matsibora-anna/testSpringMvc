@@ -34,9 +34,9 @@ public class ItemController {
     }
 
     @GetMapping("/update")
-    public ModelAndView updateNewItem(@RequestParam("itemId") int itemId) {
+    public ModelAndView updateItem(@RequestParam("itemId") int itemId) {
         ModelAndView theModel = new ModelAndView("form-add-items");
-        Optional<Item> item = itemService.findById(itemId);
+        Item item = itemService.findById(itemId);
         theModel.addObject("item", item);
         return theModel;
     }
@@ -45,6 +45,12 @@ public class ItemController {
     public String saveItem(@ModelAttribute("item") Item item) {
         itemService.addItem(item);
         return "redirect:/item/list";
+    }
+
+    @GetMapping("/delete")
+    public String deleteItem(@RequestParam("itemId") int itemId, Model theModel) {
+        theModel.addAttribute("disable", ""+ itemService.deleteById(itemId));
+        return "redirect:/item/list?d=" + itemService.deleteById(itemId);
     }
 
 

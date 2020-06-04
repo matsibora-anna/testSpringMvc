@@ -6,10 +6,9 @@ import java.util.Optional;
 
 public interface ItemService {
 
-    public List<Item> getItems();
-
-    public void addItem(Item item);
-    public Optional<Item> findById(Integer id);
-    public void updateItem(Item item);
+    List<Item> getItems();
+    void addItem(Item item);
+    Item findById(Integer id);
+    boolean deleteById(Integer id);
 
 }

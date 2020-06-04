@@ -26,6 +26,9 @@ public class Item {
     @Column(name = "number")
     private Integer numberItem;
 
+    @Column(name = "disable")
+    private boolean disableItem = false;
+
     public Integer getNumberItem() {
         return numberItem;
     }
@@ -75,5 +78,13 @@ public class Item {
 
     public void setCategoryItem(String categoryItem) {
         this.categoryItem = categoryItem;
+    }
+
+    public boolean getDisableItem() {
+        return disableItem;
+    }
+
+    public void setDisableItem(boolean disableItem) {
+        this.disableItem = disableItem;
     }
 }
