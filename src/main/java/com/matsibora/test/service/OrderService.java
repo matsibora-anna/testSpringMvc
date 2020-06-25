@@ -4,7 +4,9 @@ import com.matsibora.test.entity.Order;
 
 import java.util.List;
 
-public interface OderService {
+public interface OrderService {
 
     List<Order> getOrders();
+    Order findById(Integer id);
+    void save(Order customer);
 }
