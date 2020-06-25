@@ -19,6 +19,7 @@
         <tr>
             <th>CODE</th>
             <th>NAME</th>
+            <th>CATEGORY</th>
             <th>PRICE</th>
             <th>NUMBER</th>
             <th>ACTIONS</th>
@@ -37,6 +38,7 @@
             <tr>
                 <td>${item.codeItem}</td>
                 <td>${item.nameItem}</td>
+                <td>${item.categoryItem}</td>
                 <td>${item.priceItem}</td>
                 <td>${item.numberItem}</td>
                 <td><button><a href="${updateLink}">Update</a></button></td>
