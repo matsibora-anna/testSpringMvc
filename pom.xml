@@ -21,7 +21,7 @@
     <jstl.version>1.2</jstl.version>
     <servlets.version>4.0.1</servlets.version>
     <spring.jpa>2.3.0.RELEASE</spring.jpa>
-    <mysql.connector>8.0.19</mysql.connector>
+    <mysql.connector>8.0.28</mysql.connector>
   </properties>
 
   <dependencies>
